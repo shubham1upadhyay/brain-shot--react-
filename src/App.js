@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { HomePage } from "./myComponent/HomePage";
+import { Route, Routes } from "react-router-dom";
+import { Navbar } from "./components/Navbar";
+import "./App.css"
+import { OnePageAssesment } from "./pages/OnePageAssesment";
+import { CreateForm } from "./pages/CreateForm";
+import { Categories } from "./pages/Categories";
+import { PleaseWait } from "./pages/PleaseWait";
+const App = () => {
 
-function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+
+      <Routes>
+        <Route path="/home" element={<HomePage />} />
+      </Routes>
+
+      <Routes>
+        <Route path="/navbar" element={<Navbar />} />
+      </Routes>
+
+      <Routes>
+        <Route path="/category" element={<Categories />} />
+      </Routes>
+
+      <Routes>
+        <Route path="/onePageAssessment" element={<OnePageAssesment/>} />
+      </Routes>
+
+      <Routes>
+        <Route path="/createaccount" element={<CreateForm />} />
+      </Routes>
+
+      <Routes>
+        <Route path="/pleasewait" element={<PleaseWait/>} />
+      </Routes>
+
+    </>
+
   );
 }
-
 export default App;
